@@ -5,13 +5,13 @@ using System.Text;
 
 namespace Interfaces.Entidades
 {
-    public class AluguelCarro
+    class AluguelCarro
     {
 
-        private DateTime InicioAluguel { get; set; }
-        private DateTime FinalAluguel { get; set; }
-        private Veiculo Veiculo { get; set; }
-        private Pagamento Pagamento { get; set; }
+        public DateTime InicioAluguel { get; set; }
+        public DateTime FinalAluguel { get; set; }
+        public Veiculo Veiculo { get; set; }
+        public Pagamento Pagamento { get; set; }
 
         public AluguelCarro() { }
 
@@ -20,6 +20,7 @@ namespace Interfaces.Entidades
             InicioAluguel = inicioAluguel;
             FinalAluguel = finalAluguel;
             Veiculo = veiculo;
+            
         }
     }
 }

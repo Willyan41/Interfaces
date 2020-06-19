@@ -1,4 +1,5 @@
 ﻿using Interfaces.Entidades;
+using Interfaces.Serviços;
 using System;
 using System.Globalization;
 
@@ -18,13 +19,21 @@ namespace Interfaces
             Console.Write("Retorno (dd/MM/yyyy hh:mm): ");
             DateTime dataRetorno = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture);
 
-            Console.WriteLine("Entre com o valor da hora:");
-            double valorHora = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.Write("Entre com o valor da hora: ");
+            double valorHora = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            Console.WriteLine("Entre com o valor da diaria:");
-            double valorDiaria = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.Write("Entre com o valor da diaria: ");
+            double valorDia = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
 
             AluguelCarro aluguelcarro = new AluguelCarro(dataEntrada, dataRetorno, new Veiculo(modelo));
+
+            ServicoAluguel servicoAluguel = new ServicoAluguel(valorHora, valorDia);
+
+            servicoAluguel.ProcessoPagamento(aluguelcarro);
+
+            Console.WriteLine("Pagamento");
+            Console.WriteLine(aluguelcarro.Pagamento);
 
             
         }

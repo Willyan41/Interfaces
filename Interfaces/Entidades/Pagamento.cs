@@ -7,8 +7,8 @@ namespace Interfaces.Entidades
 {
     class Pagamento
     {
-        private double PagamentoBase { get; set; }
-        private double Taxa { get; set; }
+        public double PagamentoBase { get; set; }
+        public double Taxa { get; set; }
 
         public Pagamento() { }
 
