@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Interfaces.Serviços
 {
-    public class ImpostoServico
+    public class ImpostoServico : IServicoImposto
     {
 
         public double Taxa(double quantia)

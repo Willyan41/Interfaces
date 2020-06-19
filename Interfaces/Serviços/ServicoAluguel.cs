@@ -10,14 +10,15 @@ namespace Interfaces.Serviços
         public double ValorHora { get; private set; }
         public double ValorDia { get; private set; }
 
-        private ImpostoServico _impostoServico = new ImpostoServico();
+        private IServicoImposto _impostoServico; 
 
         public ServicoAluguel() { }
 
-        public ServicoAluguel(double valorHora, double valorDia)
+        public ServicoAluguel(double valorHora, double valorDia, IServicoImposto servicoImposto)
         {
             this.ValorHora = valorHora;
             this.ValorDia = valorDia;
+            _impostoServico = servicoImposto;
         }
 
         public void ProcessoPagamento(AluguelCarro aluguelCarro)

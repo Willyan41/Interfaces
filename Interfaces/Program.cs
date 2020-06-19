@@ -28,7 +28,7 @@ namespace Interfaces
 
             AluguelCarro aluguelcarro = new AluguelCarro(dataEntrada, dataRetorno, new Veiculo(modelo));
 
-            ServicoAluguel servicoAluguel = new ServicoAluguel(valorHora, valorDia);
+            ServicoAluguel servicoAluguel = new ServicoAluguel(valorHora, valorDia, new ImpostoServico());
 
             servicoAluguel.ProcessoPagamento(aluguelcarro);
 
